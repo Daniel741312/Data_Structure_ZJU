@@ -17,11 +17,6 @@ struct HeapStruct{
 MaxHeap Create(int MaxSize);
 void Insert(MaxHeap H,ElementType item);
 bool IsFull(MaxHeap H);
-
-int main(){
-
-
-	return 0;
 }
 
 /*建立一个空堆*/

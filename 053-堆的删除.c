@@ -18,7 +18,7 @@ void sys_err(const char* str){
     printf(str);
     exit(1);
 }
-ElementType DeleteMin(MaxHeap H);
+ElementType DeleteMax(MaxHeap H);
 bool IsEmpty(MaxHeap H);
 
 int main(){
@@ -27,7 +27,7 @@ int main(){
 }
 
 /*最大堆的删除*/
-ElementType DeleteMin(MaxHeap H){
+ElementType DeleteMax(MaxHeap H){
     int Parent,Child;
     ElementType MaxItem,temp;
     if(IsEmpty(H))
