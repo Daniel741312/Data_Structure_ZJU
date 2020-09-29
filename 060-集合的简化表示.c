@@ -8,7 +8,7 @@
 #define MaxSize 1000
 
 SetName Find(SetType S,ElementType X);
-
+void Union(SetType S,SetName Root1,SetName Root2);
 
 typedef int ElementType;
 typedef int SetName;
