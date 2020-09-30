@@ -1,5 +1,8 @@
+/*网络联通问题:一个典型的并查集问题*/
 #include<stdio.h>
-#define MaxSize 1000
+#include<stdbool.h>
+#include<stdlib.h>
+#define MaxSize 1001
 
 typedef int ElementType;
 typedef int SetName;
@@ -36,7 +39,8 @@ int main(){
     return 0;
 }
 
-void Input_connection(S){
+/*添加新连接*/
+void Input_connection(SetType S){
     ElementType u,v;
     SetName Root1,Root2;
     scanf("%d %d",&u,&v);
@@ -48,12 +52,14 @@ void Input_connection(S){
         Union(S,Root1,Root2);
 }
 
+/*检查两台计算机是否连接*/
 void Check_connection(SetType S){
     ElementType u,v;
     SetName Root1,Root2;
     scanf("%d %d",&u,&v);
     Root1=Find(S,u-1);
     Root2=Find(S,v-1);
+    /*如果他们的根节点相同(属于同一个集合)则已连通*/
     if(Root1==Root2)
         printf("yes\n");
     else
@@ -61,6 +67,7 @@ void Check_connection(SetType S){
     return;
 }
 
+/*检查网络的连通情况*/
 void Check_network(SetType S,int n){
     int i=0;
     int cnt=0;
@@ -74,8 +81,3 @@ void Check_network(SetType S,int n){
         printf("There are %d componets\n",cnt);
     return;
 }
-
-
-
-
-
