@@ -4,6 +4,14 @@
     *2.若他们是不同根的,则将其中一个根节点的父结点指针设置为另一个根节点的数组下标
     *3.当然这样会导致集合树越来越高
 */
+#define ElementType int
+typedef struct{
+    ElementType Data;
+    int Parent;
+}SetType;
+
+int Find(SetType S[],ElementType X);
+void Union(SetType S[],ElementType X1,ElementType X2);
 
 void Union(SetType S[],ElementType X1,ElementType X2){
     int Root1=0;
