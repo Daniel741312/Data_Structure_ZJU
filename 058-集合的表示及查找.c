@@ -10,6 +10,7 @@ typedef struct{
     ElementType Data;
     int Parent;
 }SetType;
+
 int Find(SetType S[],ElementType X);
 void Union(SetType S[],ElementType X1,ElementType X2);
 
@@ -18,14 +19,9 @@ int Find(SetType S[],ElementType X){
     int i=0;
     /*先遍历这个结构数组,找到X的位置*/
     for(i=0;(i<MaxSize)&&(S[i].Data!=X);i++)
-    
     if(i>=MaxSize)
         return -1;
     /*找到S[i]的父节点*/
     for(;S[i].Parent>=0;i=S[i].Parent);
     return i;
-}
-
-int main(){
-    return 0;
 }

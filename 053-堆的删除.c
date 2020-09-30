@@ -1,12 +1,14 @@
+/*最大堆的删除*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
 
-#define MinData -10000
+#define MaxData 10001
 #define ElementType int
 #define MinPQSize 2
 
+/*定义一个最大堆*/
 typedef struct HeapStruct* MaxHeap;
 struct HeapStruct{
     ElementType* Elements;
@@ -14,16 +16,14 @@ struct HeapStruct{
     int Capacity;
 };
 
-void sys_err(const char* str){
-    printf(str);
-    exit(1);
-}
+void sys_err(const char* str);
 ElementType DeleteMax(MaxHeap H);
 bool IsEmpty(MaxHeap H);
 
-int main(){
-
-    return 0;
+/*错误处理函数*/
+void sys_err(const char* str){
+    printf(str);
+    exit(1);
 }
 
 /*最大堆的删除*/
@@ -32,7 +32,6 @@ ElementType DeleteMax(MaxHeap H){
     ElementType MaxItem,temp;
     if(IsEmpty(H))
         sys_err("Empty");
-
     MaxItem=H->Elements[1];
 
     temp=H->Elements[H->Size--];
@@ -44,9 +43,10 @@ ElementType DeleteMax(MaxHeap H){
             break;
         else
             H->Elements[Parent]=H->Elements[Child];
-
-        H->Elements[Parent]=temp;
     }
+    /*从循环跳出来,找到了合适的Parent位置*/
+
+    H->Elements[Parent]=temp;
     return MaxItem;
 }
 
