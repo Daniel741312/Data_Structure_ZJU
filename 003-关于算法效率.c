@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<math.h>
 #include<time.h>
-#define MAXN 10                 //多项式的阶数
+#define MAXN 100                 //多项式的阶数
 #define MAXK 1e7                //最大循环次数
 
 clock_t start,stop;
@@ -21,13 +21,13 @@ int main(){
     
     start=clock();
     for(k=0;k<MAXK;k++)
-        f1(10,a,x);
+        f1(MAXN,a,x);
     stop=clock();
     printf("ticks1 cycles for 1e7 times=%d\n",(int)(stop-start));
 
     start=clock();
     for(k=0;k<MAXK;k++)
-        f2(10,a,x);
+        f2(MAXN,a,x);
     stop=clock();
     printf("\nticks2 cycles for 1e7 times=%d\n",(int)(stop-start));
 
