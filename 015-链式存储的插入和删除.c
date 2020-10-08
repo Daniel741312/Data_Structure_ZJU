@@ -1,4 +1,11 @@
 /*链表的插入和删除,在第i个元素之前插入元素*/
+#define ElementType int
+#include<stdlib.h>
+typedef struct LNode* List;
+struct LNode{
+    ElementType Data;
+    List Next;
+};
 
 /*插入*/
 List Insert(ElementType X,int i,List PtrL){

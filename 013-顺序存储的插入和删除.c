@@ -1,5 +1,11 @@
 /*顺序存储实现的链表的插入和删除,承接"012-线性表及顺序存储"*/
 #define ElementType int
+#define MAXSIZE 10001
+typedef struct LNode* List;
+struct LNode{
+    ElementType Data[MAXSIZE];
+    int Last;
+};
 
 void Insert(ElementType X,int i,List PtrL){
     int j=0;

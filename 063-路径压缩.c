@@ -6,6 +6,10 @@
         *把根变成X的父节点
         *再返回根
 */
+#define MaxSize 1001
+typedef int ElementType;
+typedef int SetName;
+typedef ElementType SetType[MaxSize];
 
 SetName Find(SetType S,ElementType X){
     if(S[X]<0)

@@ -2,6 +2,10 @@
     *采用按秩归并的思想对原来的Union函数进行改进
     *根节点不再存入-1,存入有意义的数字(树的高度或者元素的个数)
 */
+#define MaxSize 1001
+typedef int ElementType;
+typedef int SetName;
+typedef ElementType SetType[MaxSize];
 
 /*对树高进行按秩归并:S[Root]=-hight*/
 void Union(SetType S,SetName Root1,SetName Root2){

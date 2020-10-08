@@ -3,12 +3,13 @@
 #include<stdlib.h>
 #define ElementType int
 #define ERROR -1
+#define bool _Bool
 
 typedef struct SNode* Stack;
 struct SNode{
     ElementType Data;
     struct SNode* Next;
-}
+};
 
 bool IsEmpty(Stack S){
     return (S->Next==NULL);
